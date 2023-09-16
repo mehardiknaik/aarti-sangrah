@@ -1,0 +1,9 @@
+{
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "lang": "en",
+  "name": "aarti-sangrah",
+  "short_name": "aarti-sangrah",
+  "start_url": "/?utm_source=web_app_manifest",
+  "orientation": "portrait"
+}
