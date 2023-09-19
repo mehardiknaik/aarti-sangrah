@@ -26,7 +26,13 @@ const Navigation = () => {
           }}
           component={DashboardScreen}
         />
-        <Stack.Screen name="Detail" component={DetailScreen} />
+        <Stack.Screen
+          name="Detail"
+          options={{
+            headerTitle: "",
+          }}
+          component={DetailScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
