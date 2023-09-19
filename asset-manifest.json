@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.js": "/aarti-sangrah/static/js/main.b971dfdb.js",
-    "static/js/372.bb209369.js": "/aarti-sangrah/static/js/372.bb209369.js",
+    "main.js": "/aarti-sangrah/static/js/main.83639474.js",
+    "static/js/830.9f11f4de.js": "/aarti-sangrah/static/js/830.9f11f4de.js",
     "static/media/MaterialCommunityIcons.ttf": "/aarti-sangrah/static/media/MaterialCommunityIcons.5d42b4e60858731e7b65.ttf",
+    "static/media/AntDesign.ttf": "/aarti-sangrah/static/media/AntDesign.163adab9dbd7cb1ed12a.ttf",
     "favicon.ico": "/aarti-sangrah/favicon.ico",
     "index.html": "/aarti-sangrah/index.html",
     "favicon-32.png": "/aarti-sangrah/favicon-32.png",
     "favicon-16.png": "/aarti-sangrah/favicon-16.png",
-    "manifest.json": "/aarti-sangrah/manifest.json",
     "serve.json": "/aarti-sangrah/serve.json",
-    "main.b971dfdb.js.map": "/aarti-sangrah/static/js/main.b971dfdb.js.map",
-    "372.bb209369.js.map": "/aarti-sangrah/static/js/372.bb209369.js.map"
+    "manifest.json": "/aarti-sangrah/manifest.json",
+    "main.83639474.js.map": "/aarti-sangrah/static/js/main.83639474.js.map",
+    "830.9f11f4de.js.map": "/aarti-sangrah/static/js/830.9f11f4de.js.map"
   },
   "entrypoints": [
-    "static/js/372.bb209369.js",
-    "static/js/main.b971dfdb.js"
+    "static/js/830.9f11f4de.js",
+    "static/js/main.83639474.js"
   ]
 }
