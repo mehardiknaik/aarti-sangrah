@@ -6,20 +6,15 @@ import Header from "../components/Header";
 import { useNavigation } from "@react-navigation/native";
 import randomcolor from "randomcolor";
 
-const HomeScreen = () => {
+const HomeTab = () => {
   const [aartis, searchValue] = useDataStore((s) => [s.aartis, s.searchValue]);
   const navigation = useNavigation();
   return (
-    <Header
-      color={randomcolor({
-        luminosity: "dark",
-        seed: "header",
-      })}
-    >
+    <View style={{ flex: 1 }}>
       <FlatList
         data={aartis}
         renderItem={({ item }) => (
-          <Surface style={{ margin: 5 }}>
+          <Card style={{ margin: 5 }}>
             <TouchableRipple
               onPress={() => {
                 navigation.navigate("Detail", { id: item.key });
@@ -29,15 +24,14 @@ const HomeScreen = () => {
                 {item.title}
               </Text>
             </TouchableRipple>
-          </Surface>
+          </Card>
         )}
         showsVerticalScrollIndicator={false}
-        scrollEnabled={false}
       />
-    </Header>
+    </View>
   );
 };
 
-export default HomeScreen;
+export default HomeTab;
 
 const styles = StyleSheet.create({});

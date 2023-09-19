@@ -1,21 +1,31 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "./HomeScreen";
-import { useTheme } from "react-native-paper";
+import HomeScreen from "./HomeTab";
 import DetailScreen from "./DetailScreen";
+import useCombinetheme from "../hooks/useCombineTheme";
+import DashboardScreen from "./DashboardScreen";
+
 const Stack = createNativeStackNavigator();
+
 const Navigation = () => {
-  const theme = useTheme();
-  console.log(theme);
+  const theme = useCombinetheme();
   return (
-    <NavigationContainer linking={linking}>
+    <NavigationContainer theme={theme} linking={linking}>
       <Stack.Navigator
-        screenOptions={{
-          headerTransparent: true,
-        }}
+        screenOptions={
+          {
+            // headerTransparent: true,
+          }
+        }
       >
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen
+          name="Dashboard"
+          options={{
+            headerShown: false,
+          }}
+          component={DashboardScreen}
+        />
         <Stack.Screen name="Detail" component={DetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
@@ -25,11 +35,11 @@ const Navigation = () => {
 const linking = {
   config: {
     screens: {
-      Home: {
+      Dashboard: {
         path: "",
         screens: {
-          Setting: "setting",
-          Dashboard: "dashboard",
+          Home: "home",
+          Settings: "settings",
         },
       },
       Detail: {

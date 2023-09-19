@@ -1,35 +1,23 @@
 import { StyleSheet } from "react-native";
-import React, { useEffect } from "react";
-import Header from "../components/Header";
-import { useNavigation } from "@react-navigation/native";
+import React, { useEffect, useState } from "react";
 import { useDataStore } from "../store/store";
-import { Surface, Text } from "react-native-paper";
-import FabButtons from "../components/FabButtons";
-import randomColor from "randomcolor";
+import { Card, Surface, Text } from "react-native-paper";
+import { ScrollView } from "react-native";
 const DetailScreen = ({ navigation, route: { params } }) => {
   const { id } = params;
-  const [aarti, setAarti, fontSize] = useDataStore((s) => [
-    s.aarti,
-    s.setAarti,
-    s.fontSize,
-  ]);
+  const [aarti, setAarti] = useState(null);
+  const [aartis, fontSize] = useDataStore((s) => [s.aartis, s.fontSize]);
 
   useEffect(() => {
-    setAarti(id);
-    return () => setAarti(-1);
+    setAarti(aartis.find((x) => x.key == id));
   }, []);
+  if (!aarti) return null;
   return (
-    <Header
-      color={randomColor({
-        seed: id,
-        luminosity: "dark",
-      })}
-    >
-      <Surface style={styles.container}>
+    <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
+      <Card style={styles.container}>
         <Text style={{ fontSize }}>{aarti?.body}</Text>
-      </Surface>
-      <FabButtons />
-    </Header>
+      </Card>
+    </ScrollView>
   );
 };
 
@@ -37,7 +25,7 @@ export default DetailScreen;
 
 const styles = StyleSheet.create({
   container: {
-    margin: 10,
     padding: 5,
+    margin: 5,
   },
 });

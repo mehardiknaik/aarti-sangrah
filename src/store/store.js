@@ -11,21 +11,15 @@ export const useDataStore = create(
           isRemovable: false,
           isFavorite: false,
         })),
-        aarti: null,
         fontSize: 20,
         searchValue: "",
-        displayMode: "light",
-
+        displayMode: "auto",
         toggleFav: (key) =>
           set((state) => {
             const index = state.aartis.findIndex((x) => x.key === key);
             if (index !== -1)
               state.aartis[index].isFavorite = !state.aartis[index].isFavorite;
           }),
-        setAarti: (key) =>
-          set((state) => ({
-            aarti: state.aartis.find((x) => x.key == key),
-          })),
         addAarti: (aarti) =>
           set((state) => {
             state.aartis.push(aarti);
@@ -49,9 +43,9 @@ export const useDataStore = create(
             state.searchValue = text;
           }),
         setDisplayMode: (mode) =>
-          set((state) => {
-            state.displayMode = mode;
-          }),
+          set((state) => ({
+            displayMode: mode,
+          })),
       }),
       {
         name: "aarti-storage",
