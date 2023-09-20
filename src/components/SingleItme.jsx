@@ -19,7 +19,7 @@ const SingleItme = ({ id, title }) => {
     >
       <TouchableRipple
         onPress={() => {
-          navigation.navigate("Detail", { id, title });
+          navigation.navigate("Detail", { id });
         }}
       >
         <AniText
